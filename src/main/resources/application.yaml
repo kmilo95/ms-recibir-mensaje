@@ -1,0 +1,27 @@
+management:
+  endpoints:
+    web:
+      base-path: ${application.contacto.api.path}/actuator
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: ${application.contacto.api.path}/swagger/swagger2.json
+spring:
+  datasource:
+    url: jdbc:postgresql://${HOSTDB}/${NOMBREDB}
+    username: ${USUARIODB}
+    password: ${CLAVEDB}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: true
+      connection-timeout: 20000
+      idle-timeout: 10000
+      max-lifetime: 1000
+      maximum-pool-size: 1
+      minimum-idle: 10
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

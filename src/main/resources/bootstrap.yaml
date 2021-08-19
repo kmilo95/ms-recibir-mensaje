@@ -1,0 +1,16 @@
+application:
+  contacto:
+    api:
+      path: /contacto/v1.0/gestion
+spring:
+  application:
+    name: ms-recibir-mensaje
+  main:
+    allow-bean-definition-overriding: true
+info:
+  project:
+    version: 1.0.0
+    title: MS Recibir Mensaje
+    description: microservicio de recibir mensaje
+server:
+  port: 8093

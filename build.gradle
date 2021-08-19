@@ -1,0 +1,47 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'maven-publish'
+}
+
+
+group = 'com.contacto.recibirMensaje'
+version = '0.0.1-SNAPSHOT'
+description = 'recibirMensaje'
+sourceCompatibility = '1.8'
+archivesBaseName = 'ms-recibir-mensaje'
+
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.mapstruct:mapstruct-jdk8:1.2.0.Final'
+	implementation 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+	implementation 'commons-codec:commons-codec:1.14'
+	implementation "io.springfox:springfox-boot-starter:3.0.0"
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-context', version: '2.2.6.RELEASE'
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+	implementation group: 'org.hibernate', name: 'hibernate-validator', version: '7.0.1.Final'
+	implementation group: 'org.bouncycastle', name: 'bcprov-ext-jdk16', version: '1.46'
+	runtimeOnly 'org.postgresql:postgresql'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'io.projectreactor:reactor-test'
+}
+
+test {
+	useJUnitPlatform()
+}
